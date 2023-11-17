@@ -7,6 +7,11 @@
 import {LitElement, html, css} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
+import './apple-card.js';
+import './apple-collection.js';
+import './apple-header.js';
+import './apple-link.js';
+
 /**
  * An example element.
  *
