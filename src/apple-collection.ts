@@ -30,19 +30,43 @@ export class AppleCollection extends LitElement {
     args: () => []
   });
 
+  private _shuffleArray = (array) => {
+    const cloneArray = [...array]
+
+    for (let i = cloneArray.length - 1; i >= 0; i--) {
+      let rand = Math.floor(Math.random() * (i + 1))
+      // 配列の要素の順番を入れ替える
+      let tmpStorage = cloneArray[i]
+      cloneArray[i] = cloneArray[rand]
+      cloneArray[rand] = tmpStorage
+    }
+
+    return cloneArray
+  }
+
   private _convert(json) {
     const isIncludes = (arr, target) => arr.some(el => target.includes(el)); //OR
     const isAllIncludes = (arr, target) => arr.every(el => target.includes(el)); //AND
-    const converted = json.data.filter((module: any) => {
+    const filtered = json.data.filter((module: any) => {
       const tags = JSON.parse(`"${module.tags}"`);
       const tagArray = this.tags.split(' ');
-      if (this.condition == 'AND') {
+      if (this.condition.toUpperCase() == 'AND') {
         return isAllIncludes(tagArray, tags);
       } else {
         return isIncludes(tagArray, tags);
       }
     });
-    return converted;
+    return this._applyAlgorithm(filtered);
+  }
+
+  private _applyAlgorithm(array) {
+    const algorithm = this.algorithm.toUpperCase();
+    if (algorithm == 'NORMAL') {
+      return array;
+    } else if (algorithm == 'RANDOM') {
+      console.log("RRRRR");
+      return this._shuffleArray(array);
+    }
   }
 
   /**
@@ -57,24 +81,43 @@ export class AppleCollection extends LitElement {
   @property({type: Number})
   cols = 2;
 
-    /**
+  /**
    * The number of times the button has been clicked.
    */
-    @property()
-    tags = '';
+  @property()
+  tags = '';
 
   /**
    * The number of times the button has been clicked.
    */
-    @property()
-    condition = 'AND';
+  @property()
+  condition = 'and';
+
+  /**
+   * normal | random | recommended-for-you
+   */
+  @property()
+  algorithm = 'normal';
 
   /**
    * Formats a greeting
    * @param name The name to say "Hello" to
    */
   private getCard(module: any, large: boolean) {
-      return html`<apple-card url=${module.url} headline="${module.headline}" subhead="${module.subhead}" color="${module.color}" image="${module.image}" weight="${large ? 'large' : 'normal'}"></apple-card>`;
+      return html`
+        <apple-card
+          headline="${module.headline}"
+          subhead="${module.subhead}"
+          color="${module.color}"
+          image="${module.image}"
+          weight="${large ? 'large' : 'normal'}"
+          url=${module.url}
+          ctatext=${module.ctatext}
+          subctatext="${module.subctatext}"
+          subctaurl="${module.subctaurl}"
+        >
+        </apple-card>
+      `;
   }
 
   override render() {

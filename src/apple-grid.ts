@@ -70,7 +70,6 @@ export class AppleGrid extends LitElement {
   _listItems!: Array<HTMLElement>;
 
   override render() {
-    console.log(this._listItems);
     return html`
       <div class="grid-container grid-${this.getCols()}">
         <slot></slot>

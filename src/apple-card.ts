@@ -113,6 +113,15 @@ weight: 'normal';
 @property()
 url: '';
 
+@property()
+ctatext: '';
+
+@property()
+subctaurl: '';
+
+@property()
+subctatext: '';
+
 override render() {
   return html`
       <style>
@@ -126,8 +135,8 @@ override render() {
             <h4 class="headline headline-${this.weight}">${this.headline}</h4>
             <h5 class="subhead subhead-${this.weight}">${this.subhead}</h5>
             <div class="cta-links cta-link-${this.weight}">
-              <apple-link href="${this.url}">さらに詳しく</apple-link>
-              <apple-link href="${this.url}">購入する</apple-link>
+              ${this.ctatext ? html`<apple-link href="${this.url}">${this.ctatext}</apple-link>` : ''}
+              ${this.subctatext ? html`<apple-link href="${this.subctaurl}">${this.subctatext}</apple-link>` : ''}
             </div>
           </div>
           <div class="unit-image-wrapper">
