@@ -10,10 +10,10 @@ import {customElement, property, queryAssignedElements} from 'lit/decorators.js'
 /**
  * An example element.
  *
- * @customElement pana-grid
+ * @customElement apple-grid
  */
-@customElement('pana-grid')
-export class PanaGrid extends LitElement {
+@customElement('apple-grid')
+export class AppleGrid extends LitElement {
   static override styles = css`
     :host {
       display: block;
@@ -80,6 +80,6 @@ export class PanaGrid extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'pana-grid': PanaGrid;
+    'apple-grid': AppleGrid;
   }
 }

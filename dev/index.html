@@ -2,27 +2,49 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Panasonic Web Components Demo</title>
+    <title>Apple Web Components Demo</title>
 
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="../pana-card.js"></script>
-    <script type="module" src="../pana-link.js"></script>
-    <script type="module" src="../pana-grid.js"></script>
-    <script type="module" src="../pana-collection.js"></script>
-    <script type="module" src="../pana-header.js"></script>
-    
-    <!-- <script type="module" src="../docs/pana-web-components.bundled.js"></script> -->
+    <script type="module" src="../apple-card.js"></script>
+    <script type="module" src="../apple-link.js"></script>
+    <script type="module" src="../apple-grid.js"></script>
+    <script type="module" src="../apple-collection.js"></script>
+    <script type="module" src="../apple-header.js"></script>
 
     <style>
       body {
         width: 100%;
-        margin: 0;
-        padding: 0;
       }
     </style>
   </head>
   <body>
-    <pana-header />
+    <apple-header></apple-header>
+
+    <apple-collection
+      display="card"
+      fullwidthrows="3"
+      cols="2" 
+      tags=""
+      condition="or"
+      algorithm="random">
+    </apple-collection>
+
+    <!--
+    <apple-grid cols="1">
+      <apple-card headline="Macbook Pro" subhead="パワーの美学。" image="https://www.apple.com/jp/home/heroes/macbook-pro-14-and-16-2023-oct/images/hero_mbp__fx6ku12vgw2m_large_2x.jpg"></apple-card>
+      <apple-card headline="iMac" subhead="パワーをギュッと。" image="https://www.apple.com/jp/home/heroes/imac-2023-oct/images/hero_imac__dqh65mwjj04m_large_2x.jpg"></apple-card>
+      <apple-card color="black" headline="iPhone 15 Pro" subhead="チタニウム。この強さ。この軽さ。これぞ、Pro。" image="https://www.apple.com/v/home/bf/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_large_2x.jpg"></apple-card>
+    </apple-grid>
+
+    <apple-grid cols="2">
+      <apple-card headline="iPhone 15" subhead="新しいカメラ。新しいデザイン。うっとり。" image="https://www.apple.com/v/home/bf/images/promos/iphone-15/promo_iphone15_announce__fmxxi8r9fkuy_large_2x.jpg"></apple-card>
+      <apple-card headline="めくるめくギフト。" subhead="あの人が待ち望んでいたギフトを贈ろう。" image="https://www.apple.com/v/home/bf/images/promos/holiday-2023/holiday_2023_promo__dirvdl6a3r2a_large_2x.jpg"></apple-card>
+      <apple-card color="black" headline="Apple Watch" subhead="頭脳、明るさ、パワーの未来系。" image="https://www.apple.com/jp/home/promos/apple-watch-series-9/images/promo_apple_watch_series_9_avail__btfhzr0g0ynm_large_2x.jpg"></apple-card>
+      <apple-card color="black" headline="AirPods Pro" subhead="適応型オーディオ、ついにデビュー。" image="https://www.apple.com/v/home/bf/images/promos/airpods-pro/promo_airpods_pro_order__d8xv36p4uwae_large_2x.jpg"></apple-card>
+      <apple-card headline="15インチMacbook Air" subhead="こんなに大きい。それでも薄い。" image="https://www.apple.com/v/home/bf/images/promos/macbook-air-15/promo_macbook_air_15_midnight__3zojl1nanrme_large_2x.jpg"></apple-card>
+      <apple-card headline="Apple Trade In" subhead="iPhone 11以降の下取りで新しいiPhoneが割引に。" image="https://www.apple.com/v/home/bf/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_large_2x.jpg"></apple-card>
+    </apple-grid>
+    -->
   </body>
 </html>

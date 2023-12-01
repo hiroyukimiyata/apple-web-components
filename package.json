@@ -3,13 +3,13 @@
   "private": true,
   "version": "2.0.0",
   "description": "A simple web component",
-  "main": "pana-web-components.js",
-  "module": "pana-web-components.js",
+  "main": "apple-web-components.js",
+  "module": "apple-web-components.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "clean": "rimraf pana-web-components.{d.ts,d.ts.map,js,js.map} test/pana-web-components.{d.ts,d.ts.map,js,js.map} test/pana-web-components_test.{d.ts,d.ts.map,js,js.map}",
+    "clean": "rimraf apple-web-components.{d.ts,d.ts.map,js,js.map} test/apple-web-components.{d.ts,d.ts.map,js,js.map} test/apple-web-components_test.{d.ts,d.ts.map,js,js.map}",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
     "lint:lit-analyzer": "lit-analyzer",
@@ -18,7 +18,7 @@
     "docs:clean": "rimraf docs",
     "docs:gen": "eleventy --config=.eleventy.cjs",
     "docs:gen:watch": "eleventy --config=.eleventy.cjs --watch",
-    "docs:build": "rollup -c --file docs/pana-web-components.bundled.js",
+    "docs:build": "rollup -c --file docs/apple-web-components.bundled.js",
     "docs:assets": "cp node_modules/prismjs/themes/prism-okaidia.css docs/",
     "docs:serve": "wds --root-dir=docs --node-resolve --watch",
     "analyze": "cem analyze --litelement --globs \"src/**/*.ts\"",
@@ -30,7 +30,7 @@
     "test:watch": "wtr --watch",
     "test:prod": "MODE=prod wtr",
     "test:prod:watch": "MODE=prod wtr --watch",
-    "checksize": "rollup -c ; cat pana-web-components.bundled.js | gzip -9 | wc -c ; rm pana-web-components.bundled.js"
+    "checksize": "rollup -c ; cat apple-web-components.bundled.js | gzip -9 | wc -c ; rm apple-web-components.bundled.js"
   },
   "keywords": [
     "web-components",

@@ -12,7 +12,7 @@ import replace from '@rollup/plugin-replace';
 export default {
   input: 'my-element.js',
   output: {
-    file: 'pana-web-components.bundled.js',
+    file: 'apple-web-components.bundled.js',
     format: 'esm',
   },
   onwarn(warning) {

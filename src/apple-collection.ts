@@ -8,15 +8,15 @@ import {LitElement, html, css} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {Task} from '@lit/task';
 
-import './pana-card.js';
-import './pana-grid.js';
+import './apple-card.js';
+import './apple-grid.js';
 
 /**
  * An example element.
- * @customElement pana-collection
+ * @customElement apple-collection
  */
-@customElement('pana-collection')
-export class PanaCollection extends LitElement {
+@customElement('apple-collection')
+export class AppleCollection extends LitElement {
   static override styles = css`
   `;
 
@@ -32,12 +32,15 @@ export class PanaCollection extends LitElement {
 
   private _shuffleArray = (array) => {
     const cloneArray = [...array]
+
     for (let i = cloneArray.length - 1; i >= 0; i--) {
       let rand = Math.floor(Math.random() * (i + 1))
+      // 配列の要素の順番を入れ替える
       let tmpStorage = cloneArray[i]
       cloneArray[i] = cloneArray[rand]
       cloneArray[rand] = tmpStorage
     }
+
     return cloneArray
   }
 
@@ -102,7 +105,7 @@ export class PanaCollection extends LitElement {
    */
   private getCard(module: any, large: boolean) {
       return html`
-        <pana-card
+        <apple-card
           headline="${module.headline}"
           subhead="${module.subhead}"
           color="${module.color}"
@@ -113,7 +116,7 @@ export class PanaCollection extends LitElement {
           subctatext="${module.subctatext}"
           subctaurl="${module.subctaurl}"
         >
-        </pana-card>
+        </apple-card>
       `;
   }
 
@@ -122,16 +125,16 @@ export class PanaCollection extends LitElement {
       pending: () => html`<p>Loading product...</p>`,
       complete: (modules) =>
         html`
-        <pana-grid cols="1">
+        <apple-grid cols="1">
           ${modules.map((module) =>
             this.getCard(module, true)
           ).slice(0, this.fullwidthrows)}
-        </pana-grid>
-        <pana-grid cols="${this.cols}">
+        </apple-grid>
+        <apple-grid cols="${this.cols}">
           ${modules.map((module) =>
             this.getCard(module, false)
           ).slice(this.fullwidthrows, modules.length - ((modules.length - this.fullwidthrows) % this.cols))}
-        </pana-grid>
+        </apple-grid>
         `,
       error: (e) => html`<p>Error: ${e}</p>`
     });
@@ -143,6 +146,6 @@ export class PanaCollection extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'pana-collection': PanaCollection;
+    'apple-collection': AppleCollection;
   }
 }

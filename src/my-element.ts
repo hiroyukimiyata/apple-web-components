@@ -7,10 +7,10 @@
 import {LitElement, html, css} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
-import './pana-card.js';
-import './pana-collection.js';
-import './pana-header.js';
-import './pana-link.js';
+import './apple-card.js';
+import './apple-collection.js';
+import './apple-header.js';
+import './apple-link.js';
 
 /**
  * An example element.
