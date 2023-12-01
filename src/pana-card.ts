@@ -7,14 +7,14 @@
 import {LitElement, html, css} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
-import './apple-link.js';
+import './pana-link.js';
 
 /**
  * An example element.
- * @customElement apple-card
+ * @customElement pana-card
  */
-@customElement('apple-card')
-export class AppleCard extends LitElement {
+@customElement('pana-card')
+export class PanaCard extends LitElement {
   static override styles = css`
     .unit-wrapper {
       display: flex;
@@ -67,7 +67,7 @@ export class AppleCard extends LitElement {
       font-size: 26px;
       font-weight: 440;
     }
-    .cta-links apple-link:not(:first-of-type) {
+    .cta-links pana-link:not(:first-of-type) {
       margin-left: 28px;
     }
     .cta-links-normal {
@@ -135,8 +135,8 @@ override render() {
             <h4 class="headline headline-${this.weight}">${this.headline}</h4>
             <h5 class="subhead subhead-${this.weight}">${this.subhead}</h5>
             <div class="cta-links cta-link-${this.weight}">
-              ${this.ctatext ? html`<apple-link href="${this.url}">${this.ctatext}</apple-link>` : ''}
-              ${this.subctatext ? html`<apple-link href="${this.subctaurl}">${this.subctatext}</apple-link>` : ''}
+              ${this.ctatext ? html`<pana-link href="${this.url}">${this.ctatext}</pana-link>` : ''}
+              ${this.subctatext ? html`<pana-link href="${this.subctaurl}">${this.subctatext}</pana-link>` : ''}
             </div>
           </div>
           <div class="unit-image-wrapper">
@@ -149,6 +149,6 @@ override render() {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'apple-card': AppleCard;
+    'pana-card': PanaCard;
   }
 }

@@ -9,10 +9,10 @@ import {customElement, property} from 'lit/decorators.js';
 
 /**
  * An example element.
- * @customElement apple-link
+ * @customElement pana-link
  */
-@customElement('apple-link')
-export class AppleLink extends LitElement {
+@customElement('pana-link')
+export class PanaLink extends LitElement {
   static override styles = css`
     a {
       text-decoration: none;
@@ -48,6 +48,6 @@ override render() {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'apple-link': AppleLink;
+    'pana-link': PanaLink;
   }
 }

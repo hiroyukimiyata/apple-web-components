@@ -11,3 +11,6 @@ my-element.d.ts.map
 #my-element.bundled.js
 
 .DS_Store
+/pana-*.js
+/pana-*.ts
+/pana-*.map
